@@ -1,25 +1,13 @@
-from django.contrib.auth.models import User
-from django.contrib import messages
-from django.views.generic import TemplateView
-from django.views.generic.list import ListView
-from django.views.generic.edit import FormView
-from django.shortcuts import redirect
-
-from .forms import GenerateRandomUserForm
-from .tasks import create_random_user_accounts
+from apple.tasks import send_email_task, sleepy
+from django.http import HttpResponse
+from django.shortcuts import render
 
 
-class UsersListView(ListView):
-    template_name = 'core/users_list.html'
-    model = User
+def index(request):
+    # sleepy(10)
+    sleepy.delay(10)
+    return HttpResponse('Django: I\'m fine ;)')
 
-
-class GenerateRandomUserView(FormView):
-    template_name = 'core/generate_random_users.html'
-    form_class = GenerateRandomUserForm
-
-    def form_valid(self, form):
-        total = form.cleaned_data.get('total')
-        create_random_user_accounts.delay(total)
-        messages.success(self.request, 'We are generating your random users! Wait a moment and refresh this page.')
-        return redirect('users_list')
+def send_email(request):
+    send_email_task()
+    return HttpResponse('eMail has been sent!')

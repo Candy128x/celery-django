@@ -114,7 +114,9 @@ EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True # TLS settings
+#EMAIL_USE_SSL = False 
 EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
+# EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend' # Enable when use gmail email
 
 
 # Internationalization
@@ -132,6 +134,8 @@ USE_TZ = True
 
 # CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+CELERY_ACCEPT_CONTENT=['json']
+CELERY_TASK_SERIALIZER='json'
 
 
 # Static files (CSS, JavaScript, Images)
