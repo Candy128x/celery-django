@@ -45,6 +45,12 @@ deb https://dl.bintray.com/rabbitmq/debian bionic main
 - Enable RabbitMQ service on system boot.
 - => sudo systemctl enable rabbitmq-server
 
+- install celery
+- => pip3 install django-celery
+- => pip3 install django-celery-email
+
+- => pip3 install python-decouple
+
 
 
 ---

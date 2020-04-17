@@ -9,3 +9,4 @@ __pycache__/
 *.pyo
 */*/migrations/*
 */media/testcase/*
+.env
