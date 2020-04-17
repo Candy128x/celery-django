@@ -9,3 +9,5 @@
 ---
 ## Status RabbitMQ in Terminal
 <kbd><img src="/imgs-readme/Screenshot_from_2020-04-16_13-16-53.png"></img></kbd>
+<kbd><img src="/imgs-readme/Screenshot_from_2020-04-17_20-24-00.png"></img></kbd>
+

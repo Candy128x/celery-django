@@ -14,7 +14,13 @@
 
 - => pip3 install psycopg2
 - => pip3 install psycopg2-binary
-- => pip install Celery
+
+- => pip3 install celery
+- => pip3 install django-celery
+- => pip3 install django-celery-email
+
+- => pip3 install python-decouple
+
 
 
 ## Installing RabbitMQ on Ubuntu 18.04
@@ -45,11 +51,21 @@ deb https://dl.bintray.com/rabbitmq/debian bionic main
 - Enable RabbitMQ service on system boot.
 - => sudo systemctl enable rabbitmq-server
 
-- install celery
-- => pip3 install django-celery
-- => pip3 install django-celery-email
 
-- => pip3 install python-decouple
+- keep the terminal session opened.
+- => sudo rabbitmq-server
+
+- if you want to run RabbitMQ in the background.
+- => sudo rabbitmq-server -detached
+
+- => sudo rabbitmqctl status
+- => sudo rabbitmqctl stop
+
+- restart service
+- => sudo service rabbitmq-server restart
+
+
+
 
 
 
