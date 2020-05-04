@@ -26,3 +26,7 @@
 ---
 ## eMail Status
 <kbd><img src="/imgs-readme/Screenshot_from_2020-04-18_00-26-02_censored.jpg"></img></kbd>
+
+---
+## RabbitMQ GUI
+<kbd><img src="/imgs-readme/Webp.net-gifmaker.gif"></img></kbd>
