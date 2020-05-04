@@ -49,6 +49,9 @@ deb https://dl.bintray.com/rabbitmq/debian bionic main
 - Enable RabbitMQ service on system boot.
 - => sudo systemctl enable rabbitmq-server
 
+- GUI interface
+- => sudo rabbitmq-plugins enable rabbitmq_management
+
 ---
 ## RabbitMQ / Celery Basic Command's
 - keep the terminal session opened.
