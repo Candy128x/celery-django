@@ -14,10 +14,11 @@ def sleepy(duration):
 @shared_task
 def send_email_task():
     # sleepy(10)
-    send_mail(
-        'Kem che Bro W! | TS:' + str(datetime.timestamp(datetime.now())), 
-        'Test mail, celery - rabbitmq - django', 
-        settings.EMAIL_HOST_USER, 
-        ['sondagarashish@gmail.com'])
+    for _ in range(5):
+        send_mail(
+            'Kem che Bro W! | TS:' + str(datetime.timestamp(datetime.now())), 
+            'Test mail, celery - rabbitmq - django', 
+            settings.EMAIL_HOST_USER, 
+            ['sondagarashish@gmail.com'])
 
     return None
